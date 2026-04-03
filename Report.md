@@ -141,6 +141,19 @@ erDiagram
 
 Data isolation is enforced by Firebase Security Rules: each user can only access their own `/users/<uid>` node.
 
+``` json
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
+```
+
 ### 5.3 Sync Strategy
 
 **Upload (Local → Cloud):** After saving a new transaction locally, push unsynced records to Firebase.
