@@ -33,8 +33,8 @@ Make sure the following tools are installed on your machine before proceeding:
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_ORG/SmartAITracker.git
-cd SmartAITracker/FinalProject
+git clone https://github.com/young-bob/PROG8111.git
+cd PROG8111
 ```
 
 ---
