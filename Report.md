@@ -342,9 +342,6 @@ sequenceDiagram
 | Charts | `react-native-svg` |
 
 ---
-*End of Document*
-
----
 
 ## 2.4 Code
 
