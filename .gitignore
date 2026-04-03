@@ -1,0 +1,47 @@
+# =========================
+# Secrets & Personal Data
+# =========================
+Final Group Project.png
+Final Group ProjectW26.pdf
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+google-services.json
+GoogleService-Info.plist
+*.pem
+*.key
+*.keystore
+!debug.keystore
+
+# =========================
+# Terraform / Infrastructure
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.tfstate.lock.info
+crash.log
+
+# =========================
+# Node / React Native Overrides
+# =========================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# =========================
+# OS / IDE Generated Files
+# =========================
+.vscode/
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.zip
+infra/lambda_deploy.zip
+.terraform.lock.hcl
