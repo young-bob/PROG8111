@@ -257,15 +257,15 @@ The following screens demonstrate a fully functional mobile application utilizin
 
 ### Screen 8: Firebase
 
-![Screenshot-2026-04-03-at-12.04.22](screenshots/Screenshot-2026-04-03-at-12.04.22.png)
+<img src="screenshots/Screenshot-2026-04-03-at-12.04.22.png" alt="Screenshot-2026-04-03-at-12.04.22" style="zoom:50%;" />
 
-![Screenshot-2026-04-03-at-12.05.30](screenshots/Screenshot-2026-04-03-at-12.05.30.png)
+<img src="screenshots/Screenshot-2026-04-03-at-12.05.30.png" alt="Screenshot-2026-04-03-at-12.05.30" style="zoom:50%;" />
 
-![Screenshot-2026-04-03-at-12.05.49](screenshots/Screenshot-2026-04-03-at-12.05.49.png)
+<img src="screenshots/Screenshot-2026-04-03-at-12.05.49.png" alt="Screenshot-2026-04-03-at-12.05.49" style="zoom:50%;" />
 
 ### Screen 9: AWS AI (Bedrock Nova 2 Lite)
 
-![Screenshot-2026-04-03-at-12.14.26](screenshots/Screenshot-2026-04-03-at-12.14.26.png)
+<img src="screenshots/Screenshot-2026-04-03-at-12.14.26.png" alt="Screenshot-2026-04-03-at-12.14.26" style="zoom:50%;" />
 
 ---
 
