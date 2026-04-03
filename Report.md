@@ -3344,7 +3344,7 @@ export type RootStackParamList = {
 };
 ```
 
-### File: `infra/lambda/index.mjs`
+### File (AWS): `infra/lambda/index.mjs`
 
 ```typescript
 import {
@@ -3610,7 +3610,7 @@ export const handler = async (event) => {
 };
 ```
 
-### File: `infra/lambda/package.json`
+### File (AWS): `infra/lambda/package.json`
 
 ```typescript
 {
@@ -3623,5 +3623,3 @@ export const handler = async (event) => {
   }
 }
 ```
-
-*Source code extracted automatically.*
