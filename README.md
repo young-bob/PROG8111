@@ -78,7 +78,7 @@ You will need these for later steps:
 | **Project ID** | Firebase Console → Project Settings → General → Project ID |
 | **Web API Key** | Firebase Console → Project Settings → General → Web API Key |
 
-> **💡 Shortcut:** The Web API Key is also stored locally in `SmartAITracker/android/app/google-services.json` under `client[0].api_key[0].current_key`. You can grab it with:
+> ** Shortcut:** The Web API Key is also stored locally in `SmartAITracker/android/app/google-services.json` under `client[0].api_key[0].current_key`. You can grab it with:
 > ```bash
 > grep "current_key" SmartAITracker/android/app/google-services.json
 > ```
@@ -120,7 +120,7 @@ On success, Terraform will output the API endpoint:
 api_endpoint = "https://xxxxxxxx.execute-api.ca-central-1.amazonaws.com/prod/parse"
 ```
 
-**⚠️ Copy this URL** — you will need it in the next step.
+** Copy this URL** — you will need it in the next step.
 
 ### 3.4 Test the API (Optional)
 
@@ -200,22 +200,6 @@ android/app/build/outputs/apk/release/app-release.apk
 
 ---
 
-## 5. Submission Checklist
-
-Before submitting to the `Group Project` folder:
-
-- [ ] Release APK generated
-- [ ] Delete `SmartAITracker/android/app/build/` folder from the zip
-- [ ] Delete `SmartAITracker/node_modules/` folder from the zip
-- [ ] Word document named `Assignment2-StudentId.docx` included
-- [ ] Word contains: screenshots of **all screens** in execution
-- [ ] Word contains: complete code pasted as **text** (not images)
-- [ ] Word contains: meaningful code comments
-
-> **⚠️ WARNING:** If `build/` or `node_modules/` folders are included in the submission, the grade will be **0**. Double-check before uploading.
-
----
-
 ## Tech Stack
 
 | Layer | Technology |
@@ -233,10 +217,7 @@ Before submitting to the `Group Project` folder:
 
 ---
 
-## Team
+## Team Members
 
-| Name | Student ID | Role |
-|---|---|---|
-| [Member 1] | [ID] | [Role] |
-| [Member 2] | [ID] | [Role] |
-| [Member 3] | [ID] | [Role] |
+- Aum Shaileshkumar Patel
+- Bo Yang
