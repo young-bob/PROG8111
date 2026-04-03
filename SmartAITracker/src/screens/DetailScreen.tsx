@@ -12,6 +12,7 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {ChevronLeft, Save, Trash2} from 'lucide-react-native';
 import {RootStackParamList, TransactionType, CategoryName} from '../types';
@@ -127,7 +128,7 @@ const DetailScreen: React.FC = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container} edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.headerBtn} onPress={() => navigation.goBack()}>
@@ -249,7 +250,7 @@ const DetailScreen: React.FC = () => {
           <Text style={styles.saveBtnText}>CONFIRM {type.toUpperCase()}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
