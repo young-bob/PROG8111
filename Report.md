@@ -5,20 +5,21 @@
 **Term:** Winter 2026
 
 ### Group Members
+
 - Aum Shaileshkumar Patel
 - Bo Yang
 
 ---
 
-# PART 1: Initial Stage (App Design & Mockup Prototype)
+# PART 1: Design Stage
 
-## 1. Application Overview
+## 1.1 Overview
 
 **Smart AI Tracker** is a next-generation personal finance tracking mobile application. Users can record expenses and incomes through manual entry or AI-powered voice input, view transaction history, and analyze spending patterns, all with data stored locally via SQLite and synced to the cloud via Firebase.
 
 ---
 
-## 2. Initial Mockup Prototypes
+## 1.2 Mockup Prototypes
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.09.29.png" alt="Screenshot-2026-04-03-at-04.09.29" style="zoom:50%;" />
 
@@ -34,7 +35,7 @@
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.11.54.png" alt="Screenshot-2026-04-03-at-04.11.54" style="zoom:50%;" />
 
-## 3. System Architecture Design
+## 1.3 System Architecture Design
 
 ```mermaid
 graph TB
@@ -68,7 +69,7 @@ graph TB
 
 ---
 
-## 4. Navigation Flow Design
+## 1.4 Navigation Flow Design
 
 ```mermaid
 graph LR
@@ -90,9 +91,9 @@ graph LR
 
 ---
 
-## 5. Database Schema Design
+## 1.5 Database Schema Design
 
-### 5.1 SQLite (Local — Relational)
+### 1.5.1 SQLite (Local - Relational)
 
 ```mermaid
 erDiagram
@@ -124,7 +125,7 @@ erDiagram
     CATEGORIES ||--o{ TRANSACTIONS : "classifies"
 ```
 
-### 5.2 Firebase Realtime Database (Cloud — NoSQL)
+### 1.5.2 Firebase Realtime Database (Cloud - NoSQL)
 
 ```json
 {
@@ -154,9 +155,9 @@ Data isolation is enforced by Firebase Security Rules: each user can only access
 }
 ```
 
-### 5.3 Sync Strategy
+### 1.5.3 Sync Strategy
 
-**Upload (Local → Cloud):** After saving a new transaction locally, push unsynced records to Firebase.
+**Upload (Local -> Cloud):** After saving a new transaction locally, push unsynced records to Firebase.
 
 ```mermaid
 sequenceDiagram
@@ -172,7 +173,7 @@ sequenceDiagram
     App->>SQLite: Update is_synced=1
 ```
 
-**Download (Cloud → Local):** When a user logs in on a new device, pull all existing records from Firebase into the local SQLite database.
+**Download (Cloud -> Local):** When a user logs in on a new device, pull all existing records from Firebase into the local SQLite database.
 
 ```mermaid
 sequenceDiagram
@@ -192,13 +193,14 @@ sequenceDiagram
 
 ---
 
-# PART 2: Final Stage (Coding & Implementation)
+# PART 2: Implementation Stage
 
-## 6. Real Execution Screenshots (Final App)
+## 2.1 Screenshots
 
-As required by the assignment, the following screens demonstrate a fully functional mobile application utilizing various UI components, layouts, and navigation paradigms.
+The following screens demonstrate a fully functional mobile application utilizing various UI components, layouts, and navigation paradigms.
 
 ### Screen 1: Dashboard (Home)
+
 <img src="screenshots/Screenshot-2026-04-03-at-04.17.59.png" alt="Screenshot-2026-04-03-at-04.17.59" style="zoom:50%;" />
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.18.00.png" alt="Screenshot-2026-04-03-at-04.18.00" style="zoom:50%;" />
@@ -207,13 +209,13 @@ As required by the assignment, the following screens demonstrate a fully functio
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.18.02.png" alt="Screenshot-2026-04-03-at-04.18.02" style="zoom:50%;" />
 
-- **Requirement Addressed**: The home screen portrays the brand of the application, prominently featuring the **brand logo** and welcoming interface.
+- **Addressed**: The home screen portrays the brand of the application, prominently featuring the brand logo and welcoming interface.
 - **Description**: Displays the user's total balance and income/expense breakdown explicitly. Contains interactive elements (AI quick-action buttons) invoking the Device Camera and Microphone to interact with the backend AWS RESTful API.
 
 ### Screen 2: History List (Transactions)
 <img src="screenshots/Screenshot-2026-04-03-at-04.18.56.png" alt="Screenshot-2026-04-03-at-04.18.56" style="zoom:50%;" />
 
-- **Requirement Addressed**: A robust list screen implemented strictly using the React Native `<FlatList>` component to efficiently render dynamic datasets.
+- **Addressed**: A robust list screen implemented strictly using the React Native `<FlatList>` component to efficiently render dynamic datasets.
 - **Description**: Displays all historical financial records isolated from the local SQLite database. Uses complex controls (Touchables) to navigate to details.
 
 ### Screen 3: Detail Entry View
@@ -221,27 +223,27 @@ As required by the assignment, the following screens demonstrate a fully functio
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.19.31.png" alt="Screenshot-2026-04-03-at-04.19.31" style="zoom:50%;" />
 
-- **Requirement Addressed**: A detail screen dedicated to entering and editing information. 
+- **Addressed**: A detail screen dedicated to entering and editing information. 
 - **Description**: Utilizes more than 6 distinct types of UI controls including `<TextInput>` (for Title/Amount), `<Switch>` (for Type toggle), `<TouchableOpacity>` (for saves/deletes), Modals, and Action Buttons. Data entered here updates both local SQLite and remote Firebase storage.
 
 ### Screen 4: Analytics
 <img src="screenshots/Screenshot-2026-04-03-at-04.19.52.png" alt="Screenshot-2026-04-03-at-04.19.52" style="zoom:50%;" />
 
-- **Requirement Addressed**: Demonstrates advanced UI capabilities and Event Handlers. 
+- **Addressed**: Demonstrates advanced UI capabilities and Event Handlers. 
 - **Description**: Provides a visual breakdown of the user's financial health via interactive third-party charts (`react-native-svg`), including Savings Rate, Burn Rate, and dynamically computed category aggregation.
 
 ### Screen 5: App Configuration
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.20.07.png" alt="Screenshot-2026-04-03-at-04.20.07" style="zoom:50%;" />
 
-- **Requirement Addressed**: Demonstrates the use of varied screen controls and data management configuration.
+- **Addressed**: Demonstrates the use of varied screen controls and data management configuration.
 - **Description**: Provides an interface for the user to manage application preferences, view session details, and execute actions like secure logout. Includes interactive modals and notification toggles.
 
 ### Screen 6: Drawer & Global Navigation
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.20.25.png" alt="Screenshot-2026-04-03-at-04.20.25" style="zoom:50%;" />
 
-- **Requirement Addressed**: Navigation patterns matching the criteria (Drawer + Tabs + Stack).
+- **Addressed**: Navigation patterns matching the criteria (Drawer + Tabs + Stack).
 - **Description**: The left-side Drawer Navigator complements the Bottom Tabs and the Stack Navigator (used for the Detail View). The settings drawer provides a global Cloud Sync toggle component, seamlessly persisting states across the application's React Context.
 
 ### Screen 7: Sign Up & Sign In
@@ -250,14 +252,26 @@ As required by the assignment, the following screens demonstrate a fully functio
 
 <img src="screenshots/Screenshot-2026-04-03-at-04.31.43.png" alt="Screenshot-2026-04-03-at-04.31.43" style="zoom:50%;" />
 
-- **Requirement Addressed**: Demonstrates integration with remote Cloud services and backend access control. 
+- **Addressed**: Demonstrates integration with remote Cloud services and backend access control. 
 - **Description**: Provides a secure authentication flow natively integrated with Firebase Authentication. Users can log in or register a new account to isolate their transaction history in the cloud database via strict security rules.
+
+### Screen 8: Firebase
+
+![Screenshot-2026-04-03-at-12.04.22](screenshots/Screenshot-2026-04-03-at-12.04.22.png)
+
+![Screenshot-2026-04-03-at-12.05.30](screenshots/Screenshot-2026-04-03-at-12.05.30.png)
+
+![Screenshot-2026-04-03-at-12.05.49](screenshots/Screenshot-2026-04-03-at-12.05.49.png)
+
+### Screen 9: AWS AI (Bedrock Nova 2 Lite)
+
+![Screenshot-2026-04-03-at-12.14.26](screenshots/Screenshot-2026-04-03-at-12.14.26.png)
 
 ---
 
-## 7. AI Backend Implementation
+## 2.2 AI Backend Implementation
 
-### 7.1 Flow
+### 2.2.1 Flow
 
 ```mermaid
 sequenceDiagram
@@ -281,7 +295,7 @@ sequenceDiagram
     App->>SQLite: Save transaction
 ```
 
-### 7.2 Data Contract
+### 2.2.2 Data Contract
 
 **Request:**
 ```json
@@ -304,7 +318,8 @@ sequenceDiagram
 }
 ```
 
-### 7.3 Lambda Design
+### 2.2.3 Lambda Design
+
 - **Runtime:** Node.js 20.x
 - **Model:** `us.amazon.nova-2-lite-v1:0` via `@aws-sdk/client-bedrock-runtime`
 - **Temperature:** 0.0 (deterministic JSON output)
@@ -312,7 +327,7 @@ sequenceDiagram
 
 ---
 
-## 8. Key Technologies Stack
+## 2.3 Key Technologies Stack
 
 | Layer | Technology |
 |---|---|
@@ -331,7 +346,7 @@ sequenceDiagram
 
 ---
 
-## 9. Appendix: Complete Source Code
+## 2.4 Code
 
 ### File: `SmartAITracker/App.tsx`
 
