@@ -13,6 +13,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import {Smartphone, Mail, Lock, Eye, EyeOff} from 'lucide-react-native';
 import * as FirebaseService from '../services/FirebaseService';
@@ -71,9 +72,10 @@ const AuthScreen: React.FC = () => {
       <View style={styles.content}>
         {/* Logo / Branding */}
         <View style={styles.brandContainer}>
-          <View style={styles.iconWrapper}>
-            <Smartphone color="#fff" size={40} />
-          </View>
+          <Image 
+            source={require('../assets/images/logo.png')} 
+            style={{width: 80, height: 80, marginBottom: 16}} 
+          />
           <Text style={styles.brandTitle}>Smart AI Tracker</Text>
           <Text style={styles.brandSub}>SECURE CLOUD PLATFORM</Text>
         </View>
